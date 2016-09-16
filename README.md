@@ -15,23 +15,25 @@ _This php application stores names, phone numbers, and addresses._
 
 ## Specs
 
-* _Behavior: Form counts one word in a string_
-  * _Input: "Duck"_
+* _Behavior: Form counts the number of words in one string_
+  * _Input: "Ducks"_
+  * _Input2: "Chickens are better than ducks because ducks are ducks"_
   * _Output: 1_
 
-* _Behavior: Form counts number of words in a string_
-  * _Input: "Ducks eat fish"_
-  * _Output: 3_
+* _Behavior: Form counts number of words in two strings_
+  * _Input: "Ducks"_
+  * _Input2: "Chickens are better than ducks because ducks are ducks"_
+  * _Output: 1, 9_
 
 * _Behavior: Form checks to see if a word is inside a string_
   * _Input: "Ducks"_
-  * _Input: "Ducks eat fish"_
+  * _Input: "Chickens are better than ducks because ducks are ducks"_
   * _Output: True_
 
 * _Behavior: Form counts number of same word inside a string_
   * _Input: "Ducks"_
-  * _Input: "Ducks eat Ducks and Ducks"_
-  * _Output: 3_
+  * _Input: "Chickens are better than ducks because ducks are ducks"_
+  * _Output: 1_
 
 ## Known Bugs
 
