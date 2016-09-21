@@ -9,7 +9,7 @@ _This php application stores names, phone numbers, and addresses._
 
 ## Setup/Installation Requirements
 
-* _Go to_ : https://github.com/Corneezius/fluttr_v1.git
+* _Go to_ : https://github.com/Corneezius/Word_Count
 * _Clone or download this repository to your local machine_
 * _Open localhost:8000_
 
