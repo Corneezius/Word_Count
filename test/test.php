@@ -3,46 +3,38 @@
 
     class WordTest extends PHPUnit_Framework_TestCase{
 
-        function test_word_count(){
+
+        function test_OneMatch(){
+
           //Arrange
-          $test_Word = new Word;
-          $input = "Duck";
+          $test_sentence = "Ducks are delicious.";
+          $test_palabra= "Ducks";
           //Act
-          $result = $test_Word->word_count($input);
+          $result = $test_Word->word_count($test_sentence, $test_palabra);
           //Assert
           $this->assertEquals("1", $result);
         }
 
-        function test_makeTitleCase_multipleWords()
+        function test_MultipleMatch()
         {
-            // Arrange
-            $test_Word = new Wordr;
-            $input = "Ducks eat fish";
-            // Act
-            $result = $test_Word->word_count($input);
-            // Assert
-            $this->assertEquals("3", $result);
+            //Arrange
+          $test_sentence = "Ducks are delicious and Ducks are Ducks.";
+          $test_palabra= "Ducks";
+            //Act
+          $result = $test_Word->word_count($test_sentence, $test_palabra);
+            //Assert
+          $this->assertEquals("3", $result);
         }
 
-        function test_word_find()
+        function test_MultipleMatch()
         {
-        // Arrange
-        $test_Word = new Word;
-        $input1 = "Ducks";
-        $input2 = "Ducks eat fish";
-        // Act
-        $result = $test_Word->wordFind($input1, $input2);
-        // Assert
-        $this->assertEquals(true, $result);
+            //Arrange
+          $test_sentence = "Chickens are bettern that other Ucks.";
+          $test_palabra= "Ducks";
+            //Act
+          $result = $test_Word->word_count($test_sentence, $test_palabra);
+            //Assert
+          $this->assertEquals("0", $result);
         }
-
-        function test_makeTitleCase_FirstWordException(){
-          // Arrange
-          $test_TitleCaseGenerator = new TitleCaseGenerator;
-          $input = "the lord of the rings";
-          //Act
-          $result = $test_TitleCaseGenerator->makeTitleCase($input);
-          //Assert
-          $this->assertEquals("The Lord of the Rings", $result);
-        }
-      }
+    ]
+;
