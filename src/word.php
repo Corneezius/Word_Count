@@ -1,6 +1,6 @@
 <?php
 
-    class WordTest
+    class Word
     {
         private $sentence;
         private $palabra;
@@ -25,7 +25,7 @@
 
         function getPalabra()
         {
-            $this->palabra;
+            return $this->palabra;
         }
 
         function setPalabra($input_palabra)
@@ -38,17 +38,18 @@
             $this->frequency = (int) $appearances;
         }
 
-        function Word_Count()
+        function wordCount()
         {
             $input_sentence = $this->getSentence();
             $lower_sentence = strtolower($input_sentence);
-            $input_palabra = $this->palabra;
+            $input_palabra = $this->getPalabra();
             $lower_palabra = strtolower($input_palabra);
             $sentence_bit = explode(" ", $lower_sentence);
-            $result == 0;
+            $result = 0;
             foreach ($sentence_bit as $bit) {
-                if ($bit == $lower_palabra)
+                if ($bit == $lower_palabra) {
                 $result++;
+                }
             }
             return $result;
         }
