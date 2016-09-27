@@ -10,14 +10,19 @@
        ));
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('form.html.twig');
+        return $app['twig']->render('index.html.twig');
 
       });
 
-    $app->get("/scrabble_result", function() use($app) {
-        $new_Word = new Word;
-        $word_count = $new_Word->getCount($_GET['input_word']);
-        return $app['twig']->render('scrabble_score.html.twig', array('result' => $scrabble_phrase));
+    $app->post("/word_result", function() use($app) {
+        $input_sentence = $_GET['sentence'];
+        $input_word = $_GET['word'];
+        $new_Word = new Word ($input_sentence, $input_word);
+
+        $word_count = $new_Word->wordCount();
+        return $app['twig']->render('word.html.twig', array('result' => $word_count));
+
+
     });
 
     return $app;
